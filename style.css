@@ -1,0 +1,632 @@
+/* ============================================
+   Chiaki Y. Lhaden — Portfolio
+   style.css
+   ============================================ */
+
+/* === VARIABLES === */
+:root {
+  --bg: #F8F6F0;
+  --text-primary: #2C2C2A;
+  --text-secondary: #888780;
+  --accent-orange: #D85A30;
+  --accent-aqua: #1D9E75;
+  --card-bg: #E8E6E0;
+  --pad: 64px;
+}
+
+/* === RESET === */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* === BASE === */
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: "fot-tsukuagothic-pr6n", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ============================================
+   ACCENT BAR
+   ============================================ */
+.accent-bar {
+  width: 100%;
+  height: 3px;
+  display: flex;
+}
+.accent-bar-orange { flex: 1; background: var(--accent-orange); }
+.accent-bar-aqua   { flex: 1; background: var(--accent-aqua); }
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px var(--pad);
+}
+.nav-name {
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-primary);
+}
+.nav-links {
+  display: flex;
+  gap: 32px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  list-style: none;
+}
+.nav-links a {
+  color: inherit;
+}
+.nav-links a.current {
+  color: var(--text-primary);
+}
+.nav-lang {
+  color: #B4B2A9;
+  cursor: pointer;
+  border-bottom: 0.5px solid #B4B2A9;
+  padding-bottom: 1px;
+}
+.nav-menu-mobile {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: none;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 40px var(--pad);
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: auto;
+}
+
+/* ============================================
+   HOME — HERO
+   ============================================ */
+.hero {
+  padding: 96px var(--pad) 72px;
+  max-width: 640px;
+}
+.hero-statement {
+  font-family: "fot-tsukuaoldmin-pr6n", serif;
+  font-size: 19px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+.hero-statement em {
+  font-style: normal;
+  color: var(--accent-orange);
+}
+.hero-statement-en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  margin-top: 20px;
+  font-size: 18px;
+  line-height: 1.8;
+}
+.hero-sub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+/* ============================================
+   WORKS GRID  (home + works.html)
+   ============================================ */
+.works-section {
+  padding: 0 var(--pad) 64px;
+}
+.works-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.work-card {
+  aspect-ratio: 4 / 3;
+  background: var(--card-bg);
+  border-radius: 3px;
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+.work-card-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px 20px;
+  background: linear-gradient(transparent, rgba(248, 246, 240, 0.95));
+}
+.work-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+.work-title-en {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.work-title-meta {
+  font-size: 11px;
+  color: #A8A6A0;
+  margin-top: 3px;
+}
+.wip-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 11px;
+  color: var(--accent-orange);
+  border: 0.5px solid var(--accent-orange);
+  padding: 2px 8px;
+  border-radius: 2px;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   WORK DETAIL PAGE
+   ============================================ */
+.work-back {
+  padding: 28px var(--pad) 0;
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+}
+
+.work-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: var(--card-bg);
+  margin-top: 32px;
+}
+
+.work-header {
+  padding: 48px var(--pad) 0;
+  max-width: 800px;
+}
+.work-header-title-ja {
+  font-family: "fot-tsukuaoldmin-pr6n", serif;
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+.work-header-title-en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  font-size: 18px;
+  color: var(--text-secondary);
+  margin-top: 10px;
+  letter-spacing: 0.01em;
+}
+
+.work-intro {
+  font-family: "fot-tsukuaoldmin-pr6n", serif;
+  padding: 40px var(--pad) 0;
+  max-width: 640px;
+  font-size: 16px;
+  line-height: 2.1;
+  color: var(--text-secondary);
+}
+.work-intro p + p {
+  margin-top: 12px;
+}
+.work-intro .en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--text-secondary);
+  margin-top: 20px;
+}
+
+.work-body {
+  padding: 40px var(--pad) 0;
+  max-width: 640px;
+  font-size: 15px;
+  line-height: 1.95;
+  color: var(--text-primary);
+}
+.work-body p + p {
+  margin-top: 20px;
+}
+.work-body .en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  margin-top: 28px;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.85;
+}
+.work-body .en p + p {
+  margin-top: 16px;
+}
+
+.work-gallery {
+  padding: 56px var(--pad) 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.work-gallery-item {
+  aspect-ratio: 4 / 3;
+  background: var(--card-bg);
+  border-radius: 3px;
+}
+.work-gallery-item.tall {
+  aspect-ratio: 3 / 4;
+}
+.work-gallery-item.wide {
+  grid-column: span 2;
+  aspect-ratio: 16 / 7;
+}
+.work-gallery-caption {
+  font-size: 11px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.work-meta {
+  padding: 56px var(--pad) 0;
+  max-width: 520px;
+}
+.work-meta-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.work-meta-table tr {
+  border-top: 0.5px solid var(--card-bg);
+}
+.work-meta-table tr:last-child {
+  border-bottom: 0.5px solid var(--card-bg);
+}
+.work-meta-table td {
+  padding: 13px 0;
+  vertical-align: top;
+  line-height: 1.7;
+}
+.work-meta-table td:first-child {
+  width: 110px;
+  color: var(--text-secondary);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding-right: 24px;
+}
+
+.work-nav {
+  padding: 48px var(--pad) 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-secondary);
+  border-top: 0.5px solid var(--card-bg);
+  margin-top: 56px;
+}
+.work-nav a {
+  color: inherit;
+}
+.work-nav .work-nav-center {
+  color: var(--text-primary);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================
+   ABOUT PAGE
+   ============================================ */
+.about-hero {
+  padding: 80px var(--pad) 0;
+  max-width: 680px;
+}
+.about-page-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 36px;
+}
+.about-statement {
+  font-family: "fot-tsukuaoldmin-pr6n", serif;
+  font-size: 18px;
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+}
+.about-statement em {
+  font-style: normal;
+  color: var(--accent-orange);
+}
+.about-statement-en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  margin-top: 28px;
+  font-size: 17px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+
+.about-divider {
+  width: 36px;
+  height: 1px;
+  background: var(--card-bg);
+  margin: 60px var(--pad);
+}
+
+.about-bio {
+  padding: 0 var(--pad) 80px;
+  max-width: 600px;
+}
+.about-bio-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.about-bio-text {
+  font-size: 14px;
+  line-height: 1.95;
+  color: var(--text-primary);
+}
+.about-bio-text p + p {
+  margin-top: 18px;
+}
+.about-bio-text-en {
+  margin-top: 36px;
+  font-size: 13px;
+  line-height: 1.85;
+  color: var(--text-secondary);
+}
+.about-bio-text-en p + p {
+  margin-top: 16px;
+}
+
+/* ============================================
+   CV PAGE
+   ============================================ */
+.cv-page {
+  padding: 80px var(--pad) 80px;
+  max-width: 800px;
+}
+.cv-page-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 48px;
+}
+.cv-section-title {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 56px;
+  margin-bottom: 8px;
+}
+.cv-section-title:first-of-type {
+  margin-top: 0;
+}
+.cv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.cv-table tr {
+  border-top: 0.5px solid var(--card-bg);
+}
+.cv-table tr:last-child {
+  border-bottom: 0.5px solid var(--card-bg);
+}
+.cv-table td {
+  padding: 14px 0;
+  vertical-align: top;
+  line-height: 1.75;
+}
+.cv-table td:first-child {
+  width: 72px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  padding-right: 32px;
+  white-space: nowrap;
+  padding-top: 15px;
+}
+.cv-table .cv-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+/* ============================================
+   JOURNAL PAGE
+   ============================================ */
+.journal-page {
+  padding: 80px var(--pad) 80px;
+}
+.journal-page-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.journal-list {
+  max-width: 640px;
+}
+.journal-item {
+  padding: 32px 0;
+  border-top: 0.5px solid var(--card-bg);
+  display: block;
+  color: inherit;
+}
+.journal-item:last-child {
+  border-bottom: 0.5px solid var(--card-bg);
+}
+.journal-item-date {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+.journal-item-title-ja {
+  font-family: "fot-tsukuaoldmin-pr6n", serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+.journal-item-title-en {
+  font-family: "cormorant-garamond", "Cormorant Garamond", serif;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.journal-item-excerpt {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  max-width: 520px;
+}
+.journal-item-read {
+  font-size: 12px;
+  color: var(--accent-aqua);
+  margin-top: 14px;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   CONTACT PAGE
+   ============================================ */
+.contact-page {
+  padding: 80px var(--pad) 80px;
+  max-width: 520px;
+}
+.contact-page-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.contact-item {
+  padding: 24px 0;
+  border-top: 0.5px solid var(--card-bg);
+}
+.contact-item:last-of-type {
+  border-bottom: 0.5px solid var(--card-bg);
+}
+.contact-item-label {
+  font-size: 11px;
+  color: var(--text-secondary);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.contact-item-value {
+  font-size: 14px;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+.contact-note {
+  margin-top: 44px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+}
+.contact-note p + p {
+  margin-top: 14px;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --pad: 22px;
+  }
+
+  /* Nav */
+  .nav { padding: 18px var(--pad); }
+  .nav-links { display: none; }
+  .nav-menu-mobile { display: block; }
+
+  /* Home hero */
+  .hero { padding: 48px var(--pad) 36px; }
+  .hero-statement { font-size: 16px; line-height: 1.8; }
+  .hero-statement-en { font-size: 15px; }
+  .hero-sub { font-size: 11px; }
+
+  /* Works grid */
+  .works-section { padding: 0 var(--pad) 24px; }
+  .works-grid { grid-template-columns: 1fr; gap: 14px; }
+  .work-card { aspect-ratio: 16 / 9; }
+
+  /* Work detail */
+  .work-back { padding: 20px var(--pad) 0; }
+  .work-hero { margin-top: 20px; aspect-ratio: 4 / 3; }
+  .work-header { padding: 32px var(--pad) 0; }
+  .work-header-title-ja { font-size: 22px; }
+  .work-header-title-en { font-size: 16px; }
+  .work-intro { padding: 28px var(--pad) 0; font-size: 14px; line-height: 1.95; }
+  .work-body { padding: 28px var(--pad) 0; font-size: 14px; }
+  .work-gallery { padding: 32px var(--pad) 0; grid-template-columns: 1fr; }
+  .work-gallery-item.wide { grid-column: span 1; aspect-ratio: 4 / 3; }
+  .work-meta { padding: 40px var(--pad) 0; }
+  .work-nav { padding: 28px var(--pad) 48px; flex-direction: column; gap: 14px; align-items: flex-start; }
+
+  /* About */
+  .about-hero { padding: 48px var(--pad) 0; }
+  .about-statement { font-size: 15px; line-height: 1.85; }
+  .about-statement-en { font-size: 15px; }
+  .about-divider { margin: 40px var(--pad); }
+  .about-bio { padding: 0 var(--pad) 48px; }
+
+  /* CV */
+  .cv-page { padding: 48px var(--pad) 48px; }
+  .cv-table td:first-child { width: 52px; padding-right: 16px; font-size: 12px; }
+
+  /* Journal */
+  .journal-page { padding: 48px var(--pad) 48px; }
+  .journal-item-title-ja { font-size: 15px; }
+
+  /* Contact */
+  .contact-page { padding: 48px var(--pad) 48px; }
+
+  /* Footer */
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 24px;
+    font-size: 11px;
+    text-align: center;
+  }
+}
