@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.work-hero img, .work-gallery-item img').forEach(function (img) {
+  document.querySelectorAll('.work-hero img, .work-gallery-item img, img.zoomable').forEach(function (img) {
     img.addEventListener('click', function () {
       open(img.currentSrc || img.src, img.alt);
     });
