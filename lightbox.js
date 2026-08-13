@@ -17,10 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.style.overflow = '';
   }
 
-  document.querySelectorAll('.work-hero img, .work-gallery-item img, img.zoomable').forEach(function (img) {
-    img.addEventListener('click', function () {
-      open(img.currentSrc || img.src, img.alt);
-    });
+  window.openLightbox = open;
+
+  document.addEventListener('click', function (e) {
+    var img = e.target.closest('.work-hero img, .work-gallery-item img, img.zoomable');
+    if (img) open(img.currentSrc || img.src, img.alt);
   });
 
   overlay.addEventListener('click', close);
